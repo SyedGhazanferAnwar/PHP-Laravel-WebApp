@@ -1,5 +1,3 @@
-
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Stat
-
+## PHP-Laravel-WebApp
+A full fledged Laravel based web application which includes CMS.Having a decent enough Frontend, which has a major part of boot strap.This App is 
+underconstruction.
