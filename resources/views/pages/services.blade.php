@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
+@extends('layouts/app')
+
+@section('title')
     Services
-</body>
-</html>
+@endsection
+@section('content')
+    <h1>{{$title}}</h1>
+    @if(count($myservices) > 0)
+    <ul class='list-group'>
+        @foreach($myservices as $service)
+          <li class='list-group-item'>{{$service}}</li>
+        @endforeach
+    </ul>
+    @endif
+@endsection
