@@ -13,7 +13,7 @@
 </head>
 <body>
     @include('inc/navbar')
-    <div style="padding-top:1%;"></div>
+    <div style="padding-top:5%;"></div>
     <div class="container">
         @yield('content')
     </div>
