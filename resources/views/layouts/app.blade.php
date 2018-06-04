@@ -15,6 +15,7 @@
     @include('inc/navbar')
     <div style="padding-top:5%;"></div>
     <div class="container">
+        @include('inc/prompt')
         @yield('content')
     </div>
 </body>

@@ -15,6 +15,12 @@
             <li class="nav-item">
                     <a class="nav-link" href="/lsapp/public/services">Services</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/lsapp/public/posts">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/lsapp/public/posts/create">Create Blog</a>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
