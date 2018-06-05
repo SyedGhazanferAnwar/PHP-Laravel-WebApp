@@ -3605,7 +3605,7 @@ var i,
 		return -1;
 	},
 
-	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
+	booleans = "checked|selected|async|autofocus|autoplay|controls|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
 
 	// Regular expressions
 
@@ -7472,7 +7472,7 @@ jQuery.fn.extend( {
 	promise: function( type, obj ) {
 		var tmp,
 			count = 1,
-			defer = jQuery.Deferred(),
+			//defer = jQuery.Deferred(),
 			elements = this,
 			i = this.length,
 			resolve = function() {
@@ -24407,9 +24407,9 @@ if (token) {
      * }, 'deferred');
      * // => Logs 'deferred' after one millisecond.
      */
-    var defer = baseRest(function(func, args) {
-      return baseDelay(func, 1, args);
-    });
+    // var defer = baseRest(function(func, args) {
+    //   return baseDelay(func, 1, args);
+    // });
 
     /**
      * Invokes `func` after `wait` milliseconds. Any additional arguments are
@@ -30506,7 +30506,7 @@ if (token) {
     lodash.debounce = debounce;
     lodash.defaults = defaults;
     lodash.defaultsDeep = defaultsDeep;
-    lodash.defer = defer;
+    //lodash.defer = defer;
     lodash.delay = delay;
     lodash.difference = difference;
     lodash.differenceBy = differenceBy;

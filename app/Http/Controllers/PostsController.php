@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-
+use Purifier;
 class PostsController extends Controller
 {
     /**
@@ -42,7 +42,7 @@ class PostsController extends Controller
         ]);
         $single_element=new POST();
         $single_element->title=$request->title;
-        $single_element->body=$request->body;
+        $single_element->body=Purifier::clean($request->body);
         $single_element->save();
         return redirect('/posts')->with('success','Post Created');
     }
@@ -67,7 +67,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $single=POST::find($id);
+        return view('posts/edit')->with('single',$single);
     }
 
     /**
@@ -79,7 +80,15 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title'=>'required',
+            'body'=>'required'
+        ]);
+        $single_element=POST::find($id);
+        $single_element->title=$request->title;
+        $single_element->body=Purifier::clean($request->body);
+        $single_element->save();
+        return redirect('/posts')->with('success','Post Updated');
     }
 
     /**
@@ -90,6 +99,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post=Post::find($id);
+        $post->delete();
+        return redirect('/posts')->with('success','Post Deleted');
     }
 }
