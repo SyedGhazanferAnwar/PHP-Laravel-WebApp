@@ -15,7 +15,33 @@
                         </div>
                     @endif
 
-                   <h3>Your Blog posts</h3>
+                   <h4>Your Blog posts</h4>
+                   @if(count($myposts)>0)
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Title</th>
+                            <th>View</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            </tr>
+                                    @foreach($myposts as $post)
+                                        <tr>
+                                            <td>{{$post->title}}</td>
+                                            <td><a class="btn btn-primary" href="/lsapp/public/posts/{{$post->id}}">View</a></td>
+                                            <td><a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn btn-primary">Edit</a></td>
+                                            <td><a>
+                                                    {!!Form::open(['action'=>['PostsController@destroy',$post->id],'method'=>'POST'])!!}
+                                                    {{Form::hidden('_method','DELETE')}}
+                                                    {{Form::submit('Delete',['class'=>'btn btn-danger'])}}
+                                                    {!!Form::close()!!}
+                                                </a></td>
+                                        </tr>
+                                    @endforeach
+                        </table>                
+                    @else
+                            <p>You don't have any posts</p>                           
+                    @endif
                 </div>
             </div>
         </div>
